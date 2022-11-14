@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<body>
+      <div th:fragment="header">
+     
+            <header class="navbar navbar-expand-sm navbar-light bg-light">
+                  <a class="navbar-brand" href="#">Tech-polyshop</a>
+                  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                      <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/site/home}">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" >Điện thoại</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" >giày dép</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" >quần áo nam</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">tiếng anh </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Tiếng viê</a>
+                      </li>
+                      
+                    </ul>
+                  
+            <li class="nav-item dropdown" style=" list-style: none">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account Settings
+              </a>
+             
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" th:href="@{/site/customers/add}">register</a>
+                <a class="dropdown-item" href="#">Exit</a>
+                <a class="dropdown-item" href="#">forget password</a>
+                <hr>
+                </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" th:href="@{/site/customers/add}">register</a>
+                <a class="dropdown-item" href="#">Exit</a>
+                <a class="dropdown-item" href="#">forget password</a>
+              </div>
+            </li>
+                  </div>
+                </header>
+
+
+      </div>
+</body>
+</html>

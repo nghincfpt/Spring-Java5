@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
+<head>
+
+</head>
+<img src="/images/hinh nen.png" alt="" width="1560px" style="text-align: center;" >
+<body>
+<h3>Thông tin chi tiết sản phẩm</h3>
+	<article>
+		<div class="col-sm-6">
+
+		
+	<form action="" method="post">
+		<div class="card " style="margin-left: 10px;">
+			<h5>Trả gióp 0%</h5>
+			<img th:src="@{${'/uploads/images/' + products.image}}"
+				th:alt="${products.name}" class="btn btn-outline-danger">
+
+		</div >
+		
+		
+		<div style="margin-left: 70px;margin: 0 auto">
+		<h3  >
+			<span th:text="${products.name}"></span>
+		</h3>
+		<h3>
+			Gía bán : <span th:text="${products.unitPrice}"></span> đ
+		</h3>
+		<h3>
+			Số lượng :<span th:text="${products.quantity}"></span>
+		</h3>
+		<h3>
+			giảm giá : <span th:text="${products.discount}"></span>
+		</h3>
+	
+        </div>
+	</form>
+		</div>
+
+	</article>
+</body>
+
+</html>

@@ -1,2 +1,0 @@
-# nghincfirstgithub
-mieeu ta

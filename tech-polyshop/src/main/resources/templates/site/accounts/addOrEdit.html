@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{/site/SiteLayout.html}"
+>
+
+<head>
+
+</head>
+<body>
+    <section class="row" layout:fragment="content">
+        <div class="col-6 offset-3 mt-4">
+            <form th:action="@{/site/accounts/saveOrUpdate}"  method="post" th:object="${customer}">
+                <div class="card">
+                    <div class="card-header">
+                        <!-- <h2  th:text="${customer.isEdit? 'Edit Customer' : 'Add New Customer'}"></h2> -->
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" th:field="*{isEdit}" >
+ 
+                          <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control"  th:field="*{name}"
+                            name="name" id="name" aria-describedby="emailid" placeholder="name">
+                            <small id="usernameId" 
+                             th:if="${#fields.hasErrors('email')}"
+                            class="form-text text-muted">Email is invalid</small>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" class="form-control"  th:field="*{email}"
+                            name="email" id="email" aria-describedby="emailid" placeholder="email">
+                            <small id="usernameId" 
+                             th:if="${#fields.hasErrors('email')}"
+                            class="form-text text-muted">Email is invalid</small>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="Password">Password:</label>
+                            <input type="password"  class="form-control" th:field="*{Password}"
+                              name="Password" id="Password" 
+                              aria-describedby="PasswordId"  placeholder="Password">
+                            <small id="PasswordId" th:if="${#fields.hasErrors('password')}"
+                            class="form-text text-muted">Password is invalid</small>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" class="form-control"  th:field="*{phone}"
+                            name="phone" id="phone" aria-describedby="phoneid" placeholder="phone">
+                            <small id="phoneid" 
+                             th:if="${#fields.hasErrors('phone')}"
+                            class="form-text text-muted">phone is invalid</small>
+                          </div>
+   
+<!--                           <div class="form-group"> -->
+<!--                             <label for="registeredDate">Ngày đăng kí:</label> -->
+<!--                             <input type="text" class="form-control"  th:field="*{registeredDate}" -->
+<!--                             name="registeredDate" id="registeredDate" aria-describedby="registeredDateid" placeholder="registeredDate"> -->
+<!--                             <small id="registeredDateid"  -->
+<!--                              th:if="${#fields.hasErrors('registeredDate')}" -->
+<!--                             class="form-text text-muted">registeredDate is invalid</small> -->
+<!--                           </div> -->
+
+                          <div class="form-group">
+                            <label for="status">Trạng thái:</label>
+                            <input type="text" class="form-control"  th:field="*{status}"
+                            name="status" id="status" aria-describedby="statusid" placeholder="status">
+                            <small id="statusid" 
+                             th:if="${#fields.hasErrors('status')}"
+                            class="form-text text-muted">status is invalid</small>
+                          </div>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button type="reset" class="btn btn-secondary"> Reset</button>
+                        <a th:href="@{/site/customers}"  class="btn btn-success"> List Accounts</a>
+                        <button class="btn btn-primary"> <i class="fas fa-save"></i> 
+                            <span th:if="${customer.isEdit}">Update</span>
+                            <span th:unless="${customer.isEdit}">save</span>
+                        </button>
+                    </div>
+
+                   
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+ <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+<head>
+
+</head>
+<body>
+<img src="/images/hinh nen.png" alt="" width="1560px" style="text-align: center;" > 
+ <div  >
+	<a href="/site/home" style="text-decoration: none; font-size: 20px"><i class="fa fa-home" aria-hidden="true"></i>Trang chủ</a>
+	 </div>
+	<h1 style="text-decoration: none;text-align: center;">ShoppingCarts</h1>
+
+	<div >
+	<table  border="0"  style=" padding-left: 500px">
+		<thead>
+			<tr style="margin: auto">
+				<td>image</td>
+				<td>Name</td>
+				<td>Quantity</td>
+				<td>unitPrice</td>
+				<td></td>
+			</tr>
+		</thead>
+
+		<tbody style="text-align: center;">
+			<tr th:each=" product: ${cartItems}">
+				<form action="">
+
+					<td>
+					<a th:href="@{'edit/' + ${product.productId}}"> <img
+							th:src="@{${'/uploads/images/' + product.image}}"
+							th:alt="${product.name}" class="btn btn-outline-light"
+							style="width: 160px; height: 180px;">
+					</a></td>
+				<td th:text="${product.name}"></td>
+				<td><span th:text="${product.unitPrice}"></span> đ</td>
+				<td><span th:text="${product.quantity}"></span></td>
+
+				<td><a th:href="@{'/shoppingCart/remove/'+${product.productId }}" class="btn btn-outline-danger"> <i class="fa fa-trash" aria-hidden="true" style="font-size: 30px"></i>
+				</td>
+				</form>
+			</tr>
+			
+		</tbody>
+	</table>
+</div>
+
+	
+	<footer style="text-align: center;">
+	<div class="mt-5" style="font-size: 15px;">
+				<a href="https://www.facebook.com/mdbootstrap" target="_blank">
+					<i class="fab fa-facebook-f mr-3 "
+					style="color: #1877f2; font-size: 25px;"></i>
+				</a> <a href="https://twitter.com/MDBootstrap" target="_blank"> <i
+					class="fab fa-twitter mr-3"
+					style="color: #1da1f2; font-size: 25px;"></i>
+				</a> <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4"
+					target="_blank"> <i class="fab fa-youtube mr-3"
+					style="color: #ff0000; font-size: 25px;"></i>
+				</a> <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4"
+					target="_blank"> <i class="fa fa-instagram mr-3"
+					style="color: #c32aa3; font-size: 25px;"></i>
+				</a> <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4"
+					target="_blank"> <i class="fa fa-yahoo mr-3"
+					style="color: #c32aa3; font-size: 25px;"></i>
+				</a> <a href="https://plus.google.com/u/0/b/107863090883699620484"
+					target="_blank"> <i class="fab fa-google-plus-g mr-3"
+					style="color: #4285f4; font-size: 25px;"></i>
+				</a> <a href="https://dribbble.com/mdbootstrap" target="_blank"> <i
+					class="fab fa-dribbble mr-3"
+					style="color: #ea4c89; font-size: 25px;"></i>
+				</a> <a href="https://pinterest.com/mdbootstrap" target="_blank"> <i
+					class="fab fa-pinterest mr-3"
+					style="color: #bd081c; font-size: 25px;"></i>
+				</a> <a href="https://github.com/mdbootstrap/bootstrap-material-design"
+					target="_blank"> <i class="fab fa-github mr-3"
+					style="color: black; font-size: 25px;"></i>
+				</a> <a href="http://codepen.io/mdbootstrap/" target="_blank"> <i
+					class="fab fa-codepen mr-3" style="color: green; font-size: 25px;"></i>
+				</a>
+			</div>
+
+			<div >
+				© 2022 Copyright: <a href="https://www.thegioididong.com"
+					target="_blank"> TheGioiDiDong.com </a>
+			</div>
+	
+	</footer>
+</body>
+</html>
